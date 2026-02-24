@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MSDS Generator - Vipul Organics</title>
+    <title>TDS & MSDS Generator - Vipul Organics</title>
 
     <style>
         body {
@@ -59,13 +59,20 @@
 
 <body>
 
-    <div class="container">
-        <h1>MSDS Certificate Generator</h1>
-        <button onclick="goToTDS()">Generate MSDS PDF</button>
+     <div class="container">
+        <h1>Vipul Organics Document Portal</h1>
+
+        <button class="btn tds-btn" onclick="goToTDS()">Generate TDS</button>
+        <br>
+        <button class="btn msds-btn" onclick="goToMSDS()">View MSDS</button>
     </div>
 
     <script>
         function goToTDS() {
+            window.location.href = "tds.html";
+        }
+
+        function goToMSDS() {
             window.location.href = "msds_v5.html";
         }
     </script>
