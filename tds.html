@@ -804,6 +804,7 @@ async function generatePDF() {
     // ══════════════════════════════════════════════════════
 
     // 1) Product Description
+    leftY = sectionHeader(ML, leftY, 'Product Description:', leftW);
     const descRows = [
       ['Product Name',  val('product_name')],
       ['Color Index',   val('color_index')],
@@ -917,7 +918,8 @@ async function generatePDF() {
     // ── DISCLAIMER REMOVED ───────────────────────────────
 
     // ── LETTERHEAD FOOTER ─────────────────────────────────
-    const footerH = 35;  // Increased for better text visibility
+    // Footer image is 1024x256 (4:1 ratio), PDF width is 210mm, so height = 210/4 = 52.5mm
+    const footerH = 52.5;  // Proper aspect ratio for clear, unstretched display
     const footerY = PH - footerH;
     doc.addImage('data:image/png;base64,' + LETTERHEAD_FOOTER_B64,
                  'PNG', 0, footerY, PW, footerH, undefined, 'FAST');
